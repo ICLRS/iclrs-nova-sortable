@@ -15,8 +15,6 @@ class SortableController
         $prevId = $request->get('prevId');
         $nextId = $request->get('nextId');
 
-        Log::debug([$prevId, $resourceId, $nextId]);
-
         if (empty($resourceId)) return response()->json(['resourceId' => 'required'], 400);
         if (empty($resourceName)) return response()->json(['resourceName' => 'required'], 400);
         if (empty($prevId) && empty($nextId)) return response()->json(['prevId' => 'required'], 400);
